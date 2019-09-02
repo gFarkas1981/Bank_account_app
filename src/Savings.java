@@ -9,6 +9,10 @@ public class Savings extends Account {
 
         super(name, sSN, initDeposit);
 
+        accountnumber = "1" + accountnumber;
+
+        System.out.println("Account number: " + this.accountnumber);
+
         System.out.println("New Savings account");
 
     }

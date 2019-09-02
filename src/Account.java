@@ -22,7 +22,7 @@ public abstract class Account implements IRate {
         //Set account number
         index++;
         this.accountnumber = setAccountNumber();
-        System.out.println("Account number: " + this.accountnumber);
+
 
     }
 
