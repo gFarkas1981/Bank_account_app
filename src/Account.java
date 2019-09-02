@@ -16,13 +16,9 @@ public abstract class Account implements IRate {
         this.sSN = sSN;
         balance = initDeposit;
 
-        System.out.println("Name: " + name + " SSN: " + sSN + " Balance: " + balance);
-        System.out.print("New account: --> ");
-
         //Set account number
         index++;
         this.accountnumber = setAccountNumber();
-
 
     }
 
@@ -43,5 +39,14 @@ public abstract class Account implements IRate {
     }
 
     // List common methods
+    public void showInfo() {
+
+        System.out.println(
+                "Name: " + name + "\n" +
+                        "Account number: " + accountnumber + "\n" +
+                        "Balance: " + balance
+        );
+
+    }
 
 }

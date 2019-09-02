@@ -12,12 +12,13 @@ public class Checking extends Account {
 
         accountnumber = "2" + accountnumber;
 
-        System.out.println("Account number: " + this.accountnumber);
-
-        System.out.println("New checking account");
-
     }
 
     // List any methods specific to the checking account
+    public void showInfo() {
 
+        super.showInfo();
+        System.out.println("Account type: Checking");
+
+    }
 }
