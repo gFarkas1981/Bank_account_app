@@ -27,10 +27,24 @@ public class BankAccountApp {
 
         for (String[] accountHolder : newAccountHolders) {
 
-            System.out.println(accountHolder[0]);
-            System.out.println(accountHolder[1]);
-            System.out.println(accountHolder[2]);
-            System.out.println(accountHolder[3]);
+            String name = accountHolder[0];
+            String sSN = accountHolder[1];
+            String accountType = accountHolder[2];
+            double initDeposit = Double.parseDouble(accountHolder[3]);
+
+            if (accountType.equals("Savings")) {
+
+                System.out.println("Open a savings account");
+
+            } else if (accountType.equals("Checking")) {
+
+                System.out.println("Open a checking account");
+
+            } else {
+
+                System.out.println("Error reading account type");
+
+            }
 
         }
 
