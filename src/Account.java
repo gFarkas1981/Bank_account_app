@@ -10,7 +10,7 @@ public abstract class Account implements IRate {
     private double balance;
 
     // Constructor to set base properties and initialize the account
-    Account(String name, String sSN, double initDeposit) {
+    public Account(String name, String sSN, double initDeposit) {
 
         this.name = name;
         this.sSN = sSN;
@@ -20,7 +20,11 @@ public abstract class Account implements IRate {
         index++;
         this.accountnumber = setAccountNumber();
 
+        setRate();
+
     }
+
+    public abstract void setRate();
 
     private String setAccountNumber() {
 
@@ -42,7 +46,8 @@ public abstract class Account implements IRate {
         System.out.println(
                 "Name: " + name + "\n" +
                         "Account number: " + accountnumber + "\n" +
-                        "Balance: " + balance
+                        "Balance: " + balance + "\n" +
+                        "Rate: " + this.rate + "%"
         );
 
     }

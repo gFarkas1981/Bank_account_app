@@ -18,6 +18,12 @@ public class Checking extends Account {
 
     }
 
+    @Override
+    public void setRate() {
+
+        rate = getBaseRate() * 0.15;
+    }
+
     private void setDebitCard() {
 
         // Generating 3 digit random number

@@ -17,6 +17,13 @@ public class Savings extends Account {
 
     }
 
+    @Override
+    public void setRate() {
+
+        rate = getBaseRate() - .25;
+
+    }
+
     private void setSafetyDepositBox() {
 
         // Generating 3 digit random number
