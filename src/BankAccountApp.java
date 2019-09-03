@@ -1,28 +1,15 @@
+import java.util.LinkedList;
 import java.util.List;
 
 public class BankAccountApp {
 
     public static void main(String[] args) {
 
-        String file = "NewBankAccounts.csv";
-
-//        Checking chkacc1 = new Checking("John Doe", "453535365", 1500);
-//
-//        Savings savacc1 = new Savings("Rich Lowe", "467384658", 2500);
-//
-//        chkacc1.showInfo();
-//
-//        System.out.println("************************");
-//
-//        savacc1.showInfo();
-//
-//        System.out.println("************************");
-//        System.out.println("************************");
-//
-//        savacc1.compound();
+        List<Account> accounts = new LinkedList<>();
 
 
         // Read a CSV File then create new accounts based on that data
+        String file = "NewBankAccounts.csv";
         List<String[]> newAccountHolders = CSV.read(file);
 
         for (String[] accountHolder : newAccountHolders) {
@@ -34,17 +21,26 @@ public class BankAccountApp {
 
             if (accountType.equals("Savings")) {
 
-                System.out.println("Open a savings account");
+                accounts.add(new Savings(name, sSN, initDeposit));
 
             } else if (accountType.equals("Checking")) {
 
-                System.out.println("Open a checking account");
+                accounts.add(new Checking(name, sSN, initDeposit));
 
             } else {
 
                 System.out.println("Error reading account type");
 
             }
+
+        }
+
+        accounts.get(3).deposit(2025.32);
+
+        for (Account acc : accounts) {
+
+            System.out.println("\n*******************\n");
+            acc.showInfo();
 
         }
 
