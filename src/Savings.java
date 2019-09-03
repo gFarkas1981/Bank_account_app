@@ -4,8 +4,6 @@ public class Savings extends Account {
     private String safetyDepositBoxID;
     private String safetyDepositBoxKey;
 
-    private RandomGenerator randomGenerator = new RandomGenerator();
-
     // Constructor to initialize settings for the savings properties
     public Savings(String name, String sSN, double initDeposit) {
 
@@ -27,11 +25,13 @@ public class Savings extends Account {
     private void setSafetyDepositBox() {
 
         // Generating 3 digit random number
+        RandomGenerator randomGenerator = new RandomGenerator();
         safetyDepositBoxID = randomGenerator.random(3).toString();
 
-        randomGenerator = new RandomGenerator();
+
 
         // Generating 4 digit random number
+        randomGenerator = new RandomGenerator();
         safetyDepositBoxKey = randomGenerator.random(4).toString();
 
     }

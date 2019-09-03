@@ -1,7 +1,5 @@
 public class Checking extends Account {
 
-    private RandomGenerator randomGenerator = new RandomGenerator();
-
     // List properties specific to the checking account
     private String debitCardNumber;
     private String debitCardPIN;
@@ -27,11 +25,11 @@ public class Checking extends Account {
     private void setDebitCard() {
 
         // Generating 3 digit random number
+        RandomGenerator randomGenerator = new RandomGenerator();
         debitCardPIN = randomGenerator.random(3).toString();
 
-        randomGenerator = new RandomGenerator();
-
         // Generating 12 digit random number
+        randomGenerator = new RandomGenerator();
         debitCardNumber = randomGenerator.random(12).toString();
 
     }

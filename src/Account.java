@@ -1,9 +1,9 @@
 public abstract class Account implements IRate {
 
     private static int index = 10000;
-    String accountnumber;
-    double rate;
-    private RandomGenerator randomGenerator = new RandomGenerator();
+    protected String accountnumber;
+    protected double rate;
+
     // List common properties for saving and checking accounts
     private String name;
     private String sSN;
@@ -34,6 +34,7 @@ public abstract class Account implements IRate {
 
 
         // Generating 3 digit random number
+        RandomGenerator randomGenerator = new RandomGenerator();
         String randomNumber = randomGenerator.random(3).toString();
 
         return lastTwoOfSSN + uniqueID + randomNumber;
