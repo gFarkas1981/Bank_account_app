@@ -40,6 +40,15 @@ public abstract class Account implements IRate {
 
     }
 
+    public void compound() {
+
+        double accruedInterest = balance * rate / 100;
+        balance += accruedInterest;
+        System.out.println("Accrued interest: $" + accruedInterest);
+        printBalance();
+
+    }
+
     // List common methods - transactions
     public void deposit(double amount) {
 

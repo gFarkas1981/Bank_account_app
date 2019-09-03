@@ -15,9 +15,7 @@ public class BankAccountApp {
         System.out.println("************************");
         System.out.println("************************");
 
-        savacc1.deposit(5000);
-        savacc1.withdraw(200);
-        savacc1.transfer("mutter", 750);
+        savacc1.compound();
 
 
         // Read a CSV File then create new accounts based on that data
